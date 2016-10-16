@@ -10,8 +10,8 @@
 
 
 #include <stddef.h>
-#include <stdio.h>
-
+//#include <stdio.h>
+#include "libdump.h"
 #include "lua/lua.h"
 
 

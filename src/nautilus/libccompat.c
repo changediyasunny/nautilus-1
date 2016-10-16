@@ -27,6 +27,10 @@
  * 
  *
  */
+
+
+#define LIBCCOMPAT 1
+
 #include <nautilus/nautilus.h>
 #include <nautilus/libccompat.h>
 #include <nautilus/thread.h>
@@ -40,6 +44,9 @@
         UNDEF_FUN_ERR(); \
         return 0; \
     } 
+
+//Lua
+//
 
 
 static uint64_t dummy_mono_clock = 0;
@@ -450,6 +457,13 @@ gettext (const char * msgid)
     return ret;
 }
 
+int getc(FILE* arg)
+{
+
+    UNDEF_FUN_ERR();
+	return -1;
+
+}
 
 /* became lazy... */
 GEN_DEF(writev)
@@ -458,7 +472,7 @@ GEN_DEF(__errno_location)
 GEN_DEF(write)
 GEN_DEF(wcrtomb)
 GEN_DEF(mbrtowc)
-GEN_DEF(getc)
+//GEN_DEF(getc)
 GEN_DEF(__iswctype_l)
 GEN_DEF(wcslen)
 GEN_DEF(__strtof_l)

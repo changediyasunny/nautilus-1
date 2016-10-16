@@ -5,12 +5,14 @@
 */
 
 
-#include <errno.h>
-#include <stdarg.h>
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-
+//#include <errno.h>
+//#include <stdarg.h>
+//#include <stdio.h>
+//#include <stdlib.h>
+//#include <string.h>
+#include <nautilus/libccompat.h>
+#include <nautilus/errno.h>
+#include "lua/libdump.h"
 
 /* This file uses only the official API of Lua.
 ** Any function declared here could be written as an application function.

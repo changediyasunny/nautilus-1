@@ -5,13 +5,13 @@
 */
 
 
-#include <locale.h>
+
 #include <string.h>
 
 #define llex_c
 #define LUA_CORE
 
-#include "lua/lua.h"
+#include "lua.h"
 
 #include "lua/lctype.h"
 #include "lua/ldo.h"
@@ -22,7 +22,7 @@
 #include "lua/lstring.h"
 #include "lua/ltable.h"
 #include "lua/lzio.h"
-
+#include "lua/llocale.h"
 
 
 #define next(ls) (ls->current = zgetc(ls->z))

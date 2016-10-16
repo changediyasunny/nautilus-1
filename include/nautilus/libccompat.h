@@ -50,6 +50,10 @@ typedef int clockid_t;
 #define CLOCK_BOOTTIME_ALARM            9
 #define CLOCK_SGI_CYCLE                 10      /* Hardware specific */
 #define CLOCK_TAI                       11
+
+//lua
+#define EOF 				0
+
  
 typedef long time_t;
 typedef void FILE;
@@ -70,6 +74,14 @@ struct pollfd {
 };
 
 typedef void* locale_t;
+//lua
+#ifdef LIBCCOMPAT
+int errno =0;
+#else 
+extern int errno;
+#endif 
+
+
 
 time_t time(time_t * timer);
 void abort(void);
@@ -113,7 +125,10 @@ char *__nl_langinfo_l(nl_item item, locale_t locale);
 char * gettext(const char * msgid);
 
 int printf(const char *, ...);
-
+//Goutham - Adding locale for lua 
+int feof(FILE*);
+int getc(FILE*);
+// End Lua
 #define GEN_HDR(x) int x (void);
 
 GEN_HDR(writev)
@@ -122,7 +137,7 @@ GEN_HDR(__errno_location)
 GEN_HDR(write)
 GEN_HDR(wcrtomb)
 GEN_HDR(mbrtowc)
-GEN_HDR(getc)
+//GEN_HDR(getc) 
 GEN_HDR(__iswctype_l)
 GEN_HDR(wcslen)
 GEN_HDR(__strtof_l)

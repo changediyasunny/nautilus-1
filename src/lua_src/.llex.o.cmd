@@ -36,7 +36,7 @@ deps_src/lua_src/llex.o := \
     $(wildcard include/config/hpet.h) \
     $(wildcard include/config/hz.h) \
     $(wildcard include/config/virtio/pci.h) \
-  /usr/include/locale.h \
+  /usr/include/string.h \
   /usr/include/features.h \
   /usr/include/stdc-predef.h \
   /usr/include/x86_64-linux-gnu/sys/cdefs.h \
@@ -44,9 +44,7 @@ deps_src/lua_src/llex.o := \
   /usr/include/x86_64-linux-gnu/gnu/stubs.h \
   /usr/include/x86_64-linux-gnu/gnu/stubs-64.h \
   /usr/lib/gcc/x86_64-linux-gnu/4.8/include/stddef.h \
-  /usr/include/x86_64-linux-gnu/bits/locale.h \
   /usr/include/xlocale.h \
-  /usr/include/string.h \
   /usr/include/x86_64-linux-gnu/bits/string.h \
   /usr/include/x86_64-linux-gnu/bits/string2.h \
   /usr/include/endian.h \
@@ -57,9 +55,9 @@ deps_src/lua_src/llex.o := \
   /usr/include/x86_64-linux-gnu/bits/byteswap-16.h \
   /usr/include/stdlib.h \
   /usr/include/x86_64-linux-gnu/bits/string3.h \
-  include/lua/lua.h \
+  src/lua_src/lua.h \
   /usr/lib/gcc/x86_64-linux-gnu/4.8/include/stdarg.h \
-  include/lua/luaconf.h \
+  src/lua_src/luaconf.h \
   /usr/lib/gcc/x86_64-linux-gnu/4.8/include-fixed/limits.h \
   /usr/lib/gcc/x86_64-linux-gnu/4.8/include-fixed/syslimits.h \
   /usr/include/limits.h \
@@ -68,6 +66,7 @@ deps_src/lua_src/llex.o := \
   /usr/include/linux/limits.h \
   /usr/include/x86_64-linux-gnu/bits/posix2_lim.h \
   include/lua/lctype.h \
+  include/lua/lua.h \
   include/lua/llimits.h \
   include/lua/lua.h \
   include/lua/ldo.h \
@@ -85,6 +84,7 @@ deps_src/lua_src/llex.o := \
   include/lua/lstring.h \
   include/lua/lgc.h \
   include/lua/ltable.h \
+  include/lua/llocale.h \
 
 src/lua_src/llex.o: $(deps_src/lua_src/llex.o)
 

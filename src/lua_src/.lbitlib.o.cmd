@@ -53,17 +53,37 @@ deps_src/lua_src/lbitlib.o := \
   /usr/include/x86_64-linux-gnu/bits/local_lim.h \
   /usr/include/linux/limits.h \
   /usr/include/x86_64-linux-gnu/bits/posix2_lim.h \
-  /usr/include/stdio.h \
-  /usr/include/x86_64-linux-gnu/bits/types.h \
-  /usr/include/x86_64-linux-gnu/bits/typesizes.h \
-  /usr/include/libio.h \
-  /usr/include/_G_config.h \
-  /usr/include/wchar.h \
-  /usr/include/x86_64-linux-gnu/bits/stdio_lim.h \
-  /usr/include/x86_64-linux-gnu/bits/sys_errlist.h \
-  /usr/include/x86_64-linux-gnu/bits/stdio.h \
-  /usr/include/x86_64-linux-gnu/bits/stdio2.h \
   include/lua/lauxlib.h \
+  include/lua/libdump.h \
+  include/nautilus/nautilus.h \
+  include/nautilus/printk.h \
+  include/nautilus/naut_types.h \
+  include/dev/serial.h \
+  include/nautilus/instrument.h \
+  include/nautilus/vc.h \
+  include/dev/kbd.h \
+  include/dev/ioapic.h \
+  include/nautilus/intrinsics.h \
+  include/dev/timer.h \
+  include/nautilus/idt.h \
+  include/asm/lowlevel.h \
+  include/nautilus/gdt.h \
+  include/nautilus/naut_string.h \
+  include/nautilus/smp.h \
+  include/dev/apic.h \
+  include/nautilus/spinlock.h \
+  include/nautilus/atomic.h \
+  include/nautilus/cpu.h \
+  include/nautilus/mm.h \
+  include/nautilus/list.h \
+  include/nautilus/queue.h \
+  include/nautilus/paging.h \
+    $(wildcard include/config/hrt/hihalf/offset.h) \
+  include/nautilus/limits.h \
+  include/nautilus/naut_assert.h \
+  include/nautilus/barrier.h \
+  include/nautilus/numa.h \
+  include/arch/x64/main.h \
   include/lua/lualib.h \
 
 src/lua_src/lbitlib.o: $(deps_src/lua_src/lbitlib.o)
