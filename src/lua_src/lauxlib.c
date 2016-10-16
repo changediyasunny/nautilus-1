@@ -10,8 +10,12 @@
 //#include <stdio.h>
 //#include <stdlib.h>
 //#include <string.h>
+
+#define LIB_LUA
+
 #include <nautilus/libccompat.h>
 #include <nautilus/errno.h>
+
 #include "lua/libdump.h"
 
 /* This file uses only the official API of Lua.
@@ -19,7 +23,6 @@
 */
 
 #define lauxlib_c
-#define LUA_LIB
 
 #include "lua/lua.h"
 

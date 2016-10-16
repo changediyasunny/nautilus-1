@@ -73,15 +73,25 @@ struct pollfd {
     short revents;
 };
 
-typedef void* locale_t;
 //lua
+typedef void* locale_t;
+
+#define SEEK_END  0
+
+#define SEEK_CUR  1
+#define SEEK_SET  2
+#define _IOFBF  0               /* setvbuf should set fully buffered */
+#define _IOLBF  1               /* setvbuf should set line buffered */
+#define _IONBF  2               /* setvbuf should set unbuffered */
+#define L_tmpnam	1024
+
 #ifdef LIBCCOMPAT
 int errno =0;
 #else 
 extern int errno;
 #endif 
 
-
+//end lua
 
 time_t time(time_t * timer);
 void abort(void);
@@ -98,7 +108,12 @@ double drand48(void);
 char * strerror(int);
 
 int fclose(FILE*);
-FILE * fopen(const char*, FILE*);
+#ifndef LIB_LUA
+FILE * fopen(const char*, FILE*); // Default signature is fopen(cont*,cont*)
+#else
+FILE *fopen(const char *restrict filename, const char *restrict mode);
+#endif
+FILE *tmpfile(void);
 FILE * fopen64(const char*, FILE*);
 FILE *fdopen(int fd, const char *mode);
 int fflush(FILE*);
@@ -126,8 +141,34 @@ char * gettext(const char * msgid);
 
 int printf(const char *, ...);
 //Goutham - Adding locale for lua 
+void *realloc(void *ptr, size_t size);
 int feof(FILE*);
 int getc(FILE*);
+
+char *fgets(char *restrict s, int n, FILE *restrict stream); 
+FILE *freopen(const char *restrict, const char *restrict,
+             FILE *restrict);
+
+int ferror(FILE *);
+long     ftell(FILE *);
+int fscanf(FILE *restrict stream, const char *restrict format, ... );
+void clearerr(FILE *stream); 
+
+int fseek(FILE *stream, long offset, int whence); 
+
+int setvbuf(FILE *restrict stream, char *restrict buf, int type,
+       size_t size);
+
+int system(const char *command);
+
+char *getenv(const char *name);
+
+int rename(const char *old, const char *new);
+
+int remove(const char *path);
+
+char *tmpnam(char *s);
+
 // End Lua
 #define GEN_HDR(x) int x (void);
 
@@ -170,7 +211,7 @@ GEN_HDR(memchr)
 GEN_HDR(strtold_l)
 GEN_HDR(wmemcmp)
 GEN_HDR(__strtod_l)
-GEN_HDR(setvbuf)
+//GEN_HDR(setvbuf) - Implmented above 
 GEN_HDR(__wctype_l)
 GEN_HDR(__towupper_l)
 GEN_HDR(__uselocale)

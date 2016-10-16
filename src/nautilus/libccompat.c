@@ -239,7 +239,26 @@ strerror (int errnum)
     UNDEF_FUN_ERR();
     return NULL;
 }
+FILE *tmpfile(void)
+{
 
+    UNDEF_FUN_ERR();
+    return NULL;
+
+}
+int 
+ferror (FILE * f)
+{
+    UNDEF_FUN_ERR();
+    return -1;
+}
+FILE *freopen(const char *restrict, const char *restrict,
+             FILE *restrict)
+{
+
+    UNDEF_FUN_ERR();
+    return NULL;
+}
 int 
 fclose (FILE * f)
 {
@@ -271,6 +290,43 @@ fdopen (int fd, const char * mode)
     return NULL;
 }
 
+char *getenv(const char *name)
+{
+
+    UNDEF_FUN_ERR();
+    return NULL;
+}
+
+//For LUA
+char *tmpnam(char *s)
+{
+
+    UNDEF_FUN_ERR();
+    return NULL;
+}
+
+//For LUA
+int remove(const char *path)
+{
+
+    UNDEF_FUN_ERR();
+    return -1;
+}
+//For LUA
+int rename(const char *old, const char *new)
+{
+
+    UNDEF_FUN_ERR();
+    return -1;
+}
+//For LUA
+int system(const char *command)
+{
+
+    UNDEF_FUN_ERR();
+    return -1;
+}
+//For LUA
 
 int 
 fflush (FILE * f)
@@ -292,6 +348,33 @@ fprintf (FILE * f, const char * s, ...)
     va_end(arg);
     return 0;
 #endif
+}
+
+//For LUA
+int setvbuf(FILE *restrict stream, char *restrict buf, int type,
+       size_t size)
+{
+
+    UNDEF_FUN_ERR();
+    return -1;
+}
+
+
+//For LUA
+
+int fscanf(FILE *restrict stream, const char *restrict format, ... )
+{
+
+    UNDEF_FUN_ERR();
+    return -1;
+
+}
+//For LUA
+void clearerr(FILE *stream)
+{
+
+    UNDEF_FUN_ERR();
+    return NULL;
 }
 
 int 
@@ -355,6 +438,16 @@ __ctype_get_mb_cur_max (void)
 }
  
 
+
+//For LUA
+int fseek(FILE *stream, long offset, int whence)
+{
+
+    UNDEF_FUN_ERR();
+    return -1;
+
+}
+
 int 
 fseeko64 (FILE *fp, uint64_t offset, int whence)
 {
@@ -385,6 +478,13 @@ ftello64 (FILE *stream)
     return 0;
 }
 
+//For LUA
+long     ftell(FILE *)
+{
+
+    UNDEF_FUN_ERR();
+    return -1;
+}
 int 
 poll (struct pollfd *fds, nfds_t nfds, int timeout)
 {
