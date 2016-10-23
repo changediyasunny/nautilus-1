@@ -6,12 +6,12 @@
 
 
 
-#include <string.h>
+//#include <string.h>
 
 #define llex_c
 #define LUA_CORE
 
-#include "lua.h"
+#include "lua/lua.h"
 
 #include "lua/lctype.h"
 #include "lua/ldo.h"

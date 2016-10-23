@@ -37,28 +37,13 @@ deps_src/lua_src/lbitlib.o := \
     $(wildcard include/config/hz.h) \
     $(wildcard include/config/virtio/pci.h) \
   include/lua/lua.h \
-  /usr/lib/gcc/x86_64-linux-gnu/4.8/include/stdarg.h \
-  /usr/lib/gcc/x86_64-linux-gnu/4.8/include/stddef.h \
-  include/lua/luaconf.h \
-  /usr/lib/gcc/x86_64-linux-gnu/4.8/include-fixed/limits.h \
-  /usr/lib/gcc/x86_64-linux-gnu/4.8/include-fixed/syslimits.h \
-  /usr/include/limits.h \
-  /usr/include/features.h \
-  /usr/include/stdc-predef.h \
-  /usr/include/x86_64-linux-gnu/sys/cdefs.h \
-  /usr/include/x86_64-linux-gnu/bits/wordsize.h \
-  /usr/include/x86_64-linux-gnu/gnu/stubs.h \
-  /usr/include/x86_64-linux-gnu/gnu/stubs-64.h \
-  /usr/include/x86_64-linux-gnu/bits/posix1_lim.h \
-  /usr/include/x86_64-linux-gnu/bits/local_lim.h \
-  /usr/include/linux/limits.h \
-  /usr/include/x86_64-linux-gnu/bits/posix2_lim.h \
-  include/lua/lauxlib.h \
-  include/lua/libdump.h \
+  include/nautilus/libccompat.h \
   include/nautilus/nautilus.h \
   include/nautilus/printk.h \
+  /usr/lib/gcc/x86_64-linux-gnu/4.8/include/stdarg.h \
   include/nautilus/naut_types.h \
   include/dev/serial.h \
+  /usr/lib/gcc/x86_64-linux-gnu/4.8/include/stddef.h \
   include/nautilus/instrument.h \
   include/nautilus/vc.h \
   include/dev/kbd.h \
@@ -84,6 +69,9 @@ deps_src/lua_src/lbitlib.o := \
   include/nautilus/barrier.h \
   include/nautilus/numa.h \
   include/arch/x64/main.h \
+  include/lua/luaconf.h \
+  include/lua/lauxlib.h \
+  include/lua/libdump.h \
   include/lua/lualib.h \
 
 src/lua_src/lbitlib.o: $(deps_src/lua_src/lbitlib.o)

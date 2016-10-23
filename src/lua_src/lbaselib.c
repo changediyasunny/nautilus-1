@@ -18,7 +18,7 @@
 
 #include "lua/lauxlib.h"
 #include "lua/lualib.h"
-#include <nautilus/libccompat.h>
+//#include <nautilus/libccompat.h>
 
 static int luaB_print (lua_State *L) {
   int n = lua_gettop(L);  /* number of arguments */

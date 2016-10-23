@@ -5,8 +5,8 @@
 */
 
 
-#include <string.h>
-
+//#include <string.h>
+//#include <nautilus/libccompat.h>
 #define ltm_c
 #define LUA_CORE
 

@@ -5,8 +5,8 @@
 */
 
 
-#include <stddef.h>
-#include <string.h>
+//#include <stddef.h>
+//#include <string.h>
 
 #define lstate_c
 #define LUA_CORE

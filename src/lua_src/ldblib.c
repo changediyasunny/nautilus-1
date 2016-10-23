@@ -12,7 +12,7 @@
 #define ldblib_c
 #define LUA_LIB
 
-#include<nautilus/libccompat.h>
+//#include<nautilus/libccompat.h>
 
 #include "lua/lua.h"
 

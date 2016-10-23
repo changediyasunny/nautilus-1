@@ -12,9 +12,9 @@
 /*
 ** if needed, includes windows header before everything else
 */
-#if defined(_WIN32)
-#include <windows.h>
-#endif
+//#if defined(_WIN32)
+//#include <windows.h>
+//#endif
 /*
 
 #include <stdlib.h>

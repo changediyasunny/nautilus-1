@@ -5,8 +5,8 @@
 */
 
 
-#include <limits.h>
-#include <stddef.h>
+//#include <limits.h>
+//#include <stddef.h>
 
 #define ltablib_c
 #define LUA_LIB

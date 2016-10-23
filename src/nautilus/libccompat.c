@@ -296,7 +296,13 @@ char *getenv(const char *name)
     UNDEF_FUN_ERR();
     return NULL;
 }
+//For LUA
+clock_t clock()
+{
 
+    UNDEF_FUN_ERR();
+    return -1;
+}
 //For LUA
 char *tmpnam(char *s)
 {

@@ -18,8 +18,8 @@
 ** Hence even when the load factor reaches 100%, performance remains good.
 */
 
-#include <string.h>
-
+//#include <string.h>
+//#include <nautilus/libccompat.h>
 #define ltable_c
 #define LUA_CORE
 

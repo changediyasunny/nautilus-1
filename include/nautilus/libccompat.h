@@ -28,7 +28,7 @@ extern "C" {
 #endif
 
 #include <nautilus/nautilus.h>
-
+#include <nautilus/naut_types.h>
 #ifndef NAUT_CONFIG_SILENCE_UNDEF_ERR
 #define UNDEF_FUN_ERR() ERROR_PRINT("Function (%s) undefined\n", __func__)
 #else
@@ -53,20 +53,36 @@ typedef int clockid_t;
 
 //lua
 #define EOF 				0
+#define EXIT_FAILURE			0
+#define EXIT_SUCCESS			1
 
- 
+#define LC_ALL				0 
+#define LC_COLLATE			0
+#define LC_CTYPE			0
+#define LC_MONETARY			0
+#define LC_NUMERIC			0
+#define LC_TIME				0
+#define UCHAR_MAX			255
+#define SIGINT				0
+#define SIG_DFL				0
+
+#define stdin				0
+#define stdout				1
+#define stderr				2
+
+
+#define _JBLEN ((9 * 2) + 3 + 16)
+typedef int jmp_buf[_JBLEN];
+//int clock(); - better definition found later
+
+// 
 typedef long time_t;
 typedef void FILE;
 typedef uint64_t off_t;
-
+typedef long int clock_t;
 typedef int nl_item;
 typedef unsigned long int nfds_t;
-
-struct timespec {
-    time_t tv_sec;
-    long tv_nsec;
-};
-
+typedef __SIZE_TYPE__ size_t;
 struct pollfd {
     int fd;
     short events;
@@ -76,6 +92,23 @@ struct pollfd {
 //lua
 typedef void* locale_t;
 
+struct timespec {
+    time_t tv_sec;
+    long tv_nsec;
+};
+
+struct tm {
+int    tm_sec ;  
+int    tm_min ;
+int    tm_hour;
+int    tm_mday;
+int    tm_mon;
+int    tm_year;
+int    tm_wday;
+int    tm_yday;
+int    tm_isdst;
+};
+
 #define SEEK_END  0
 
 #define SEEK_CUR  1
@@ -84,12 +117,25 @@ typedef void* locale_t;
 #define _IOLBF  1               /* setvbuf should set line buffered */
 #define _IONBF  2               /* setvbuf should set unbuffered */
 #define L_tmpnam	1024
-
+#define CLOCKS_PER_SEC	1000000l /* found from time.h*/
 #ifdef LIBCCOMPAT
 int errno =0;
 #else 
 extern int errno;
 #endif 
+/*
+typedef struct { unsigned long int _val[1024/(8 *sizeof (unsigned long int))];
+} __sigset_t; 
+struct __jmp_buf_tag { 
+	long long int __jmpbuf;
+	int __mask_was_saved;
+	__sigset_t __saved_mask;
+};
+typedef struct __jmp_buf_tag jmp_buf[1]; 
+*/
+void longjmp(int *,int __val);
+int setjmp(int *);
+
 
 //end lua
 
@@ -169,9 +215,90 @@ int remove(const char *path);
 
 char *tmpnam(char *s);
 
+clock_t clock(void);
 // End Lua
 #define GEN_HDR(x) int x (void);
 
+//math
+double abs(double x)
+{
+//should return absolute value of x
+return x;
+}
+double sin(double x)
+{
+return x;
+}
+double sinh(double x)
+{
+return x;
+}
+double cos(double x)
+{
+return x;
+}
+double cosh(double x)
+{
+return x;
+}
+
+double tan(double x)
+{
+return x;
+}
+double tanh(double x)
+{
+return x;
+}
+double asin(double x)
+{
+return x;
+}
+double acos(double x)
+{
+return x;
+}
+double atan2(double x)
+{
+return x;
+}
+double ceil(double x)
+{
+return x;
+}
+double floor(double x)
+{
+return x;
+}
+double fmod(double x)
+{
+return x;
+}
+double modf(double x)
+{
+return x;
+}
+
+double sqrt(double x)
+{
+return x;
+}
+double pow(double x)
+{
+return x;
+}
+double log(double x)
+{
+return x;
+}
+double log10(double x)
+{
+return x;
+}
+double exp(double x)
+{
+return x;
+}
 GEN_HDR(writev)
 GEN_HDR(ungetwc)
 GEN_HDR(__errno_location)
@@ -182,9 +309,9 @@ GEN_HDR(mbrtowc)
 GEN_HDR(__iswctype_l)
 GEN_HDR(wcslen)
 GEN_HDR(__strtof_l)
-GEN_HDR(stderr)
+//GEN_HDR(stderr)
 GEN_HDR(wmemset)
-GEN_HDR(stdin)
+//GEN_HDR(stdin)
 GEN_HDR(fileno)
 GEN_HDR(__fxstat64)
 GEN_HDR(putc)
@@ -205,7 +332,7 @@ GEN_HDR(__wcsxfrm_l)
 GEN_HDR(wcscmp)
 GEN_HDR(wcsnrtombs)
 GEN_HDR(__strcoll_l)
-GEN_HDR(stdout)
+//GEN_HDR(stdout)
 GEN_HDR(btowc)
 GEN_HDR(memchr)
 GEN_HDR(strtold_l)

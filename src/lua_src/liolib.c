@@ -25,7 +25,7 @@
 #define liolib_c
 #define LUA_LIB
 #define LIB_LUA
-#include<nautilus/libccompat.h>
+//#include<nautilus/libccompat.h>
 #include "lua/lua.h"
 
 #include "lua/lauxlib.h"

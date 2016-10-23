@@ -36,51 +36,14 @@ deps_src/lua_src/lcorolib.o := \
     $(wildcard include/config/hpet.h) \
     $(wildcard include/config/hz.h) \
     $(wildcard include/config/virtio/pci.h) \
-  /usr/include/stdlib.h \
-  /usr/include/features.h \
-  /usr/include/stdc-predef.h \
-  /usr/include/x86_64-linux-gnu/sys/cdefs.h \
-  /usr/include/x86_64-linux-gnu/bits/wordsize.h \
-  /usr/include/x86_64-linux-gnu/gnu/stubs.h \
-  /usr/include/x86_64-linux-gnu/gnu/stubs-64.h \
-  /usr/lib/gcc/x86_64-linux-gnu/4.8/include/stddef.h \
-  /usr/include/x86_64-linux-gnu/bits/waitflags.h \
-  /usr/include/x86_64-linux-gnu/bits/waitstatus.h \
-  /usr/include/endian.h \
-  /usr/include/x86_64-linux-gnu/bits/endian.h \
-  /usr/include/x86_64-linux-gnu/bits/byteswap.h \
-  /usr/include/x86_64-linux-gnu/bits/types.h \
-  /usr/include/x86_64-linux-gnu/bits/typesizes.h \
-  /usr/include/x86_64-linux-gnu/bits/byteswap-16.h \
-  /usr/include/x86_64-linux-gnu/sys/types.h \
-  /usr/include/time.h \
-  /usr/include/x86_64-linux-gnu/sys/select.h \
-  /usr/include/x86_64-linux-gnu/bits/select.h \
-  /usr/include/x86_64-linux-gnu/bits/sigset.h \
-  /usr/include/x86_64-linux-gnu/bits/time.h \
-  /usr/include/x86_64-linux-gnu/bits/select2.h \
-  /usr/include/x86_64-linux-gnu/sys/sysmacros.h \
-  /usr/include/x86_64-linux-gnu/bits/pthreadtypes.h \
-  /usr/include/alloca.h \
-  /usr/include/x86_64-linux-gnu/bits/stdlib-bsearch.h \
-  /usr/include/x86_64-linux-gnu/bits/stdlib-float.h \
-  /usr/include/x86_64-linux-gnu/bits/stdlib.h \
   include/lua/lua.h \
-  /usr/lib/gcc/x86_64-linux-gnu/4.8/include/stdarg.h \
-  include/lua/luaconf.h \
-  /usr/lib/gcc/x86_64-linux-gnu/4.8/include-fixed/limits.h \
-  /usr/lib/gcc/x86_64-linux-gnu/4.8/include-fixed/syslimits.h \
-  /usr/include/limits.h \
-  /usr/include/x86_64-linux-gnu/bits/posix1_lim.h \
-  /usr/include/x86_64-linux-gnu/bits/local_lim.h \
-  /usr/include/linux/limits.h \
-  /usr/include/x86_64-linux-gnu/bits/posix2_lim.h \
-  include/lua/lauxlib.h \
-  include/lua/libdump.h \
+  include/nautilus/libccompat.h \
   include/nautilus/nautilus.h \
   include/nautilus/printk.h \
+  /usr/lib/gcc/x86_64-linux-gnu/4.8/include/stdarg.h \
   include/nautilus/naut_types.h \
   include/dev/serial.h \
+  /usr/lib/gcc/x86_64-linux-gnu/4.8/include/stddef.h \
   include/nautilus/instrument.h \
   include/nautilus/vc.h \
   include/dev/kbd.h \
@@ -106,6 +69,9 @@ deps_src/lua_src/lcorolib.o := \
   include/nautilus/barrier.h \
   include/nautilus/numa.h \
   include/arch/x64/main.h \
+  include/lua/luaconf.h \
+  include/lua/lauxlib.h \
+  include/lua/libdump.h \
   include/lua/lualib.h \
 
 src/lua_src/lcorolib.o: $(deps_src/lua_src/lcorolib.o)

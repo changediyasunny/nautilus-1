@@ -17,7 +17,7 @@
 #define LUA_LIB
 #define LIBCCOMPAT 1
 
-#include <nautilus/libccompat.h>
+//#include <nautilus/libccompat.h>
 #include "lua/lua.h"
 
 #include "lua/lauxlib.h"
